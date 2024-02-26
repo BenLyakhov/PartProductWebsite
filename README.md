@@ -20,6 +20,9 @@ Customize the HTML user interface for your customer’s application. The user in
 
 ### Task D - "About" Page
 Add an “About” page to the application to describe your chosen customer’s company to web viewers and include navigation to and from the “About” page and the main screen.
+1. created "about.html" page and typed filler text for now
+2. created link to mainscreen.html in about.html file
+3. created a link to about.html in mainscreen.html file (doesn't work yet)
 
 ### Task E - Sample Inventory
 Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.
@@ -48,5 +51,3 @@ Add validation for between or at the maximum and minimum fields. The validation 
 ### Task I - Add at least 2 unit tests for the max and min fields of the PartTest class in the test package
 
 ### Task J - Remove the class files for any unused validaotors in order to clean up your code
-
-### Task K - Demonstrate professional communication throughout the project
