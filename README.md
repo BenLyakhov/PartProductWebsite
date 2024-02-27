@@ -20,9 +20,11 @@ Customize the HTML user interface for your customer’s application. The user in
 
 ### Task D - "About" Page
 Add an “About” page to the application to describe your chosen customer’s company to web viewers and include navigation to and from the “About” page and the main screen.
-1. created "about.html" page and typed filler text for now
-2. created link to mainscreen.html in about.html file
-3. created a link to about.html in mainscreen.html file (doesn't work yet)
+1. Created "about.html" page and typed information about the shop on lines 22 to 34
+2. Created link to mainscreen.html in about.html file, line 90
+    -changed link from "http://localhost:8080/about" to "/about" to make the mapping work (see step 4)
+3. Created a link to about.html in mainscreen.html file, line 23
+4. Created a new controller named AboutPageController to link about.html and mainscreen.html
 
 ### Task E - Sample Inventory
 Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.
