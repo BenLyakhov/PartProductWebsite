@@ -28,7 +28,7 @@ Add an “About” page to the application to describe your chosen customer’s 
 
 ### Task E - Sample Inventory
 Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.
-Note: Make sure the sample inventory is added only when both the part and product lists are empty. When adding the sample inventory appropriate for the store, the inventory is stored in a set so duplicate items cannot be added to your products. When duplicate items are added, make a “multi-pack” part.
+Note: Make sure the sample inventory is added only when both the part and product lists are empty. When adding the sample inventory appropriate for the store, the inventory is stored in a set so duplicate items cannot be added to your products. When duplicate items are added, make a “multi-pack” part. 
 -> done. I took a screenshot of the sample inventory labeled "Task E sample inventory"
 
 ### Task F - Add "Buy Now Button"
@@ -36,6 +36,8 @@ Add a “Buy Now” button to your product list. Your “Buy Now” button must 
 •  The “Buy Now” button must be next to the buttons that update and delete products.
 •  The button should decrement the inventory of that product by one. It should not affect the inventory of any of the associated parts.
 •  Display a message that indicates the success or failure of a purchase.
+1. added the buy now button and notes on lines 85 to 88 in mainscreen.html.
+2. added new class PurchaseProductController.java
 
 ### Task G - Track Min/Max of Inventory
 Modify the parts to track maximum and minimum inventory by doing the following:
