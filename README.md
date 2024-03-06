@@ -28,8 +28,15 @@ Add an “About” page to the application to describe your chosen customer’s 
 
 ### Task E - Sample Inventory
 Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.
-Note: Make sure the sample inventory is added only when both the part and product lists are empty. When adding the sample inventory appropriate for the store, the inventory is stored in a set so duplicate items cannot be added to your products. When duplicate items are added, make a “multi-pack” part. 
--> done. I took a screenshot of the sample inventory labeled "Task E sample inventory"
+Note: Make sure the sample inventory is added only when both the part and product lists are empty. When adding the sample inventory appropriate for the store, the inventory is stored in a set so duplicate items cannot be added to your products. When duplicate items are added, make a “multi-pack” part.
+
+In BootStrapData.java, I added/changed the following:
+1. line 32, added private final inhousePartRepository
+2. line 35, added InhousePartRepository inhousePartRepository as one of the parameters of the BootStrap function
+3. line 39, added the variable this.InhousePartRepository=inhousePartRepository
+4. lines 46 to 54, changed the outsourced part from "out test" to "turkey broadhead"
+5. lines 61 to 102, added 6 inhouse parts and saved them to the inhouse part repository.
+6. lines 104 to 113, added the 5 products to the product repository.
 
 ### Task F - Add "Buy Now Button"
 Add a “Buy Now” button to your product list. Your “Buy Now” button must meet each of the following parameters:
@@ -38,6 +45,8 @@ Add a “Buy Now” button to your product list. Your “Buy Now” button must 
 •  Display a message that indicates the success or failure of a purchase.
 1. added the buy now button and notes on lines 85 to 88 in mainscreen.html.
 2. added new class PurchaseProductController.java
+3. created purchaseConfirmation.html file to indicate to the user a successful purchase.
+4. 
 
 ### Task G - Track Min/Max of Inventory
 Modify the parts to track maximum and minimum inventory by doing the following:
@@ -56,3 +65,11 @@ Add validation for between or at the maximum and minimum fields. The validation 
 ### Task I - Add at least 2 unit tests for the max and min fields of the PartTest class in the test package
 
 ### Task J - Remove the class files for any unused validaotors in order to clean up your code
+
+#### Other Notes:
+I was having a really hard time figuring out how to get the springboot app to start working again.
+Here's what I did:
+1. Run/Debug Configuration Templates: SpringBoot and Maven
+   1. SpringBoot: selected java21 as the build tool and the demoapplication as the source
+   2. Maven: working directory set to demo.
+2. I haven't tried this with just the springboot. 
