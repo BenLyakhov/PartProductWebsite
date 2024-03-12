@@ -82,10 +82,7 @@
             <td><a th:href="@{/showProductFormForUpdate(productID=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3">Update</a>
                 <a th:href="@{/deleteproduct(productID=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3"
                    onclick="if(!(confirm('Are you sure you want to delete this product?')))return false">Delete</a>
-                <!-- button for Buy Now is typed here. need to create a controller for it and need to
-                have the button decrease the inventory of the PRODUCT by one. DO NOT CHANGE the number
-                of parts for the product in inventory-->
-                <a th:href="@{/purchaseProduct(productID=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3">Buy Now</a>
+                <a th:href="@{/purchaseproduct(productID=${tempProduct.id})}" class="btn btn-primary btn-sm mb-3">Buy Now</a>
             </td>
         </tr>
         </tbody>

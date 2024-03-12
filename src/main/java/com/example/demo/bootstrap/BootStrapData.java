@@ -101,18 +101,16 @@ public class BootStrapData implements CommandLineRunner {
         turkeyFletchings.setId(2);
         inhousePartRepository.save(turkeyFletchings);
 
-        Product lightPracticeArrow= new Product("light practice arrow",45.0,30);
-        Product heavyPracticeArrow= new Product("heavy practice arrow",50.0,15);
-        Product lightHuntingArrow = new Product("light hunting arrow", 50.0, 20);
-        Product heavyHuntingArrow = new Product("heavy hunting arrow", 55.0, 15);
-        Product turkeyArrow = new Product("turkey arrow", 45.0, 20);
+        Product lightPracticeArrow= new Product("light practice arrow",45.0,5);
+        Product heavyPracticeArrow= new Product("heavy practice arrow",50.0,5);
+        Product lightHuntingArrow = new Product("light hunting arrow", 50.0, 5);
+        Product heavyHuntingArrow = new Product("heavy hunting arrow", 55.0, 5);
+        Product turkeyArrow = new Product("turkey arrow", 45.0, 5);
         productRepository.save(lightPracticeArrow);
         productRepository.save(heavyPracticeArrow);
         productRepository.save(lightHuntingArrow);
         productRepository.save(heavyHuntingArrow);
         productRepository.save(turkeyArrow);
-
-
 
         System.out.println("Started in Bootstrap");
         System.out.println("Number of Products"+productRepository.count());

@@ -173,4 +173,24 @@ public class AddProductController {
         theModel.addAttribute("availparts",availParts);
         return "productForm";
     }
+    @GetMapping("/purchaseproduct")// label of the buyNow button in mainscreen.html
+    public String purchaseproduct(@RequestParam("productID") int theId, Model theModel) {
+        ProductService productService = context.getBean(ProductServiceImpl.class);
+        Product product = productService.findById(theId);
+
+        if (product.getInv()!=0) {
+            int updatedInventory = product.getInv() - 1;
+            product.setInv(updatedInventory);
+            return "purchaseConfirmation";
+        } else {
+            return "purchaseError";
+        }
+        // if inventory is not 0, return the confirmation. if the inventory is 0, return the error
+        // html template.
+    }
 }
+// the Buy Now controller is now working, and it directs you to the correct page if inventory!= 0 or not.
+// decrementing the inventory still doesn't work yet, and on clicking the button, the confirmation or error html files
+// show up for only a split second before returning to the mainscreen.
+
+
