@@ -1,40 +1,48 @@
 package com.example.demo.controllers;
 
 import com.example.demo.domain.Product;
+import com.example.demo.repositories.ProductRepository;
 import com.example.demo.service.ProductService;
 import com.example.demo.service.ProductServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.context.ApplicationContext;
 
+import java.util.Optional;
 
+@Controller
 public class PurchaseProductController {
-    @GetMapping("/purchaseproduct")// label of the buyNow button in mainscreen.html
+
+    @Autowired
+    //private ApplicationContext context;
+    private ProductRepository productRepository;
+
+    @PostMapping("/purchaseproduct")// label of the buyNow button in mainscreen.html
     public String purchaseproduct(@RequestParam("productID") int theId, Model theModel) {
 //        ProductService productService = context.getBean(ProductServiceImpl.class);
-//        Product product3 = productService.findById(theId);
-//
-//        if (product3.getInv()!=0) {
-//            int updatedInventory = product3.getInv() - 1;
-//            product3.setInv(updatedInventory);
-//            return "purchaseConfirmation";
-//        } else {
-//            return "purchaseError";
-//        }
-        // if inventory is not 0, return the confirmation. if the inventory is 0, return the error
-        // html template.
-        return "purchaseConfirmation";
-    }
-}
+//        Product theProduct = productService.findById(theId);
 
-// notes: this file needs more work. Look at the @GetMapping("/deleteproduct") in the
-// AddProductController.java. Something similar needs to be done, but instead of deleting a
-// product, you are decreasing its inventory by one. If the inventory is zero, you can't buy a
-// product, so you need to link to the html template that says you can't buy a product.
+        long theIdl = (long) theId; // product Repository needs the id to be long, not int.
+        Optional<Product> product = productRepository.findById(theIdl);
 
-// the Product class has set and get Inv. I could probably call the get inv, set that value
-// equal to a variable, decrement that variable by one, and use that value to set the inventory
-// The issue is how to make the program do that with all parts, not just a specific one or two.
+            Product theProduct = product.get();
+            if (theProduct.getInv() != 0) { // if the inventory is not zero
+                int decrementedInv = (theProduct.getInv() - 1); // decrement inventory by one
+                theProduct.setInv(decrementedInv); // set the inventory to the new value
+                productRepository.save(theProduct); // save it back into the repository
+                return "purchaseConfirmation";
+            } else return "purchaseError";
 
-// also see lines 75 to 92 in the AddProductController.java
+    } // end String purchaseproduct
+} // end PurchaseProductController
+
+// STUCK: the values don't decrement. the controller points to the correct html page (if the inventory
+// is not zero, it redirects to purchaseConfirmation.html. If the inventory is zero, it redirects
+// to purchaseError.)
+// The issue Im having is the inventory does not decrement: I don't know how else to do this part.
+
+// see lines 75 to 92 in the AddProductController.java

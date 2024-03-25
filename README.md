@@ -48,7 +48,8 @@ Add a “Buy Now” button to your product list. Your “Buy Now” button must 
 3. created purchaseConfirmation.html file to indicate to the user a successful purchase.
 4. in PurchaseProductController.java, created an if-else statement to decrement the inventory when the "buy now" button is pressed. included a check for if product.getInv() = 0.
 5. The PurchaseProductController.java wasn't working in its own controller file; moved the code to the end of AddProductController.java, lines 176 to 191. the button is now working, and the correct webpage shows up depending on if the inventory is 0 or not.
-6. 
+6. 3/25/24 - in PurchaseProductController.java, lines 17 to 38, added code to decrement inventory value upon clicking the buy now button. need to work on the decrement portion (instructor appt made.)
+
 
 ### Task G - Track Min/Max of Inventory
 Modify the parts to track maximum and minimum inventory by doing the following:
