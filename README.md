@@ -59,7 +59,9 @@ Modify the parts to track maximum and minimum inventory by doing the following:
 •  Rename the file the persistent storage is saved to.
 •  Modify the code to enforce that the inventory is between or at the minimum and maximum value.
 1. in Part.java, lines 33 to 35, lines 58 to 66, lines 99 to 102, added minInv and maxInv variables, created overloaded constructor, created setters and getters.
-2. in Bootstrapdata.java, lines 47 to 116, added min and max inventory to all parts listed. 
+2. in Bootstrapdata.java, lines 47 to 116, added min and max inventory to all parts listed.
+3. mainscreen.html, lines 46 to 48: inHousePartForm.html, lines 24 and 25: OutsourcedPartForm.html lines 25 and 26: added input fields for min and max inventory
+4. application.properties: made a copy of the database file and renamed the file to version 2.
 
 ### Task H - Validation Test of Min/Max of Inventory
 Add validation for between or at the maximum and minimum fields. The validation must include the following:
