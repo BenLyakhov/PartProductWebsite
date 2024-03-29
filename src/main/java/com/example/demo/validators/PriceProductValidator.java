@@ -50,3 +50,4 @@ public class PriceProductValidator implements ConstraintValidator<ValidProductPr
         }
     }
 }
+// copy this and change it to min max inventory. need inventory, min and max values

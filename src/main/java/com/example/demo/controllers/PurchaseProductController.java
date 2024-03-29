@@ -23,8 +23,6 @@ public class PurchaseProductController {
 
     @PostMapping("/purchaseproduct")// label of the buyNow button in mainscreen.html
     public String purchaseproduct(@RequestParam("productID") int theId, Model theModel) {
-//        ProductService productService = context.getBean(ProductServiceImpl.class);
-//        Product theProduct = productService.findById(theId);
 
         long theIdl = (long) theId; // product Repository needs the id to be long, not int.
         Optional<Product> product = productRepository.findById(theIdl);
@@ -40,9 +38,6 @@ public class PurchaseProductController {
     } // end String purchaseproduct
 } // end PurchaseProductController
 
-// STUCK: the values don't decrement. the controller points to the correct html page (if the inventory
-// is not zero, it redirects to purchaseConfirmation.html. If the inventory is zero, it redirects
-// to purchaseError.)
-// The issue Im having is the inventory does not decrement: I don't know how else to do this part.
+// STUCK: the values don't decrement.
+// 3/29/24 8am: it works now. HUH?!?!?!?
 
-// see lines 75 to 92 in the AddProductController.java
