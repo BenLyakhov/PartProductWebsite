@@ -1,8 +1,10 @@
 package com.example.demo.domain;
 
 import com.example.demo.validators.ValidDeletePart;
+import com.example.demo.validators.ValidMaxInv;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import java.io.Serializable;
 import java.util.HashSet;
@@ -30,10 +32,12 @@ public abstract class Part implements Serializable {
     int inv;
 
     // Task G: adding min and max Inventory
-    @Min(value = 0, message = "Inventory value must be positive")
+    @Min(value = 0, message = "Minimum Inventory must be positive")
     int minInv;
+
+    //@Max(value = 100, message = "inventory must be less than 100")
+    @ValidMaxInv()
     int maxInv;
-    // add custom validator
 
     @ManyToMany
     @JoinTable(name="product_part", joinColumns = @JoinColumn(name="part_id"),

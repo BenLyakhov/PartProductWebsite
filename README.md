@@ -49,7 +49,7 @@ Add a “Buy Now” button to your product list. Your “Buy Now” button must 
 4. in PurchaseProductController.java, created an if-else statement to decrement the inventory when the "buy now" button is pressed. included a check for if product.getInv() = 0.
 5. The PurchaseProductController.java wasn't working in its own controller file; moved the code to the end of AddProductController.java, lines 176 to 191. the button is now working, and the correct webpage shows up depending on if the inventory is 0 or not.
 6. 3/25/24 - in PurchaseProductController.java, lines 17 to 38, added code to decrement inventory value upon clicking the buy now button. need to work on the decrement portion (instructor appt made.)
-
+7. 3/39/24 - AddProductController.java, added line 201, where it saves the product in the product service. Buy Now button is now working
 
 ### Task G - Track Min/Max of Inventory
 Modify the parts to track maximum and minimum inventory by doing the following:
@@ -62,6 +62,9 @@ Modify the parts to track maximum and minimum inventory by doing the following:
 2. in Bootstrapdata.java, lines 47 to 116, added min and max inventory to all parts listed.
 3. mainscreen.html, lines 46 to 48: inHousePartForm.html, lines 24 and 25: OutsourcedPartForm.html lines 25 and 26: added input fields for min and max inventory
 4. application.properties: made a copy of the database file and renamed the file to version 2.
+5. 3/29/24 - application.properties, deleted the database file in Windows file explorer (Users folder on C drive): program recreated database with new data for min and max inventory values
+6. mainscreen.html, lines 38 and 39: added table headers for min inventory and max inventory.
+7. made 2 new files: MaxInvValidator.java and ValidMaxInv.java. 
 
 ### Task H - Validation Test of Min/Max of Inventory
 Add validation for between or at the maximum and minimum fields. The validation must include the following:
