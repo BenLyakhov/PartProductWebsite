@@ -36,8 +36,9 @@ public abstract class Part implements Serializable {
     int minInv;
 
     //@Max(value = 100, message = "inventory must be less than 100")
-    @ValidMaxInv()
+    //@ValidMaxInv()
     int maxInv;
+    boolean isInRange;
 
     @ManyToMany
     @JoinTable(name="product_part", joinColumns = @JoinColumn(name="part_id"),
@@ -131,4 +132,6 @@ public abstract class Part implements Serializable {
     public int hashCode() {
         return (int) (id ^ (id >>> 32));
     }
+
+    public boolean isInventoryInRange() { return isInRange = (inv > minInv) && (inv < maxInv);}
 }

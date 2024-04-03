@@ -65,6 +65,8 @@ Modify the parts to track maximum and minimum inventory by doing the following:
 5. 3/29/24 - application.properties, deleted the database file in Windows file explorer (Users folder on C drive): program recreated database with new data for min and max inventory values
 6. mainscreen.html, lines 38 and 39: added table headers for min inventory and max inventory.
 7. made 2 new files: MaxInvValidator.java and ValidMaxInv.java. 
+8. in part.java, line 136: added boolean of true or false if the user entered inventory is outside user max and min limits (added boolean isInRange on line 41 in part.java)
+9. line 55 in AddOutsourcedPartController.java and line 45 in AddInhousePartController.java, added if statement that looked at the boolean value of part.isInventoryInRange() and determined if it would return the form again or return the confirmation
 
 ### Task H - Validation Test of Min/Max of Inventory
 Add validation for between or at the maximum and minimum fields. The validation must include the following:
