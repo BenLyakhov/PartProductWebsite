@@ -43,7 +43,7 @@ public class AddOutsourcedPartController {
 //            return "OutsourcedPartForm";
 //        } else submitForm();
 //    }
-    // trying the validator in the validators first, and then in the controllers here
+
 
     @PostMapping("/showFormAddOutPart")
     public String submitForm(@Valid @ModelAttribute("outsourcedpart") OutsourcedPart part, BindingResult bindingResult, Model theModel){
@@ -52,7 +52,8 @@ public class AddOutsourcedPartController {
             return "OutsourcedPartForm";
         }
 
-        else if (!part.isInventoryInRange()){ return "OutsourcedPartForm"; }
+//        else if (!part.isInventoryInRange()){ return "OutsourcedPartForm"; }
+//        else if (part.isInventoryAboveRange() || part.isInventoryBelowRange()) { return "OutsourcedPartForm"; }
         else{
         OutsourcedPartService repo=context.getBean(OutsourcedPartServiceImpl.class);
         OutsourcedPart op=repo.findById((int)part.getId());

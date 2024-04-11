@@ -7,11 +7,11 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Constraint(validatedBy = {MaxInvValidator.class})
-@Target({ElementType.FIELD, ElementType.PARAMETER})
+@Constraint(validatedBy = {InBetweenMinMaxValidator.class})
+@Target({ElementType.TYPE}) //elementtype.type, may not need .parameter
 @Retention(RetentionPolicy.RUNTIME)
-public @interface ValidMaxInv {
-    String message() default "Inventory cannot be above the max set inventory";
+public @interface ValidInBetweenMinMax {
+    String message() default "Inventory must be above min and below max";
     Class<?> [] groups() default {};
     Class<? extends Payload> [] payload() default {};
 }

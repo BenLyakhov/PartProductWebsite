@@ -21,9 +21,13 @@
 
 <p><input type="text" th:field="*{inv}" placeholder="Inventory" class="form-control mb-4 col-4"/></p>
     <p th:if="${#fields.hasErrors('inv')}" th:errors="*{inv}">Inventory Error</p>
+<!--    <p th:if="${#bools.isTrue('isAboveRange')}" th:errors="*{inv}">above range error</p>-->
 
-        <p><input type="text" path="minInv" th:field="*{minInv}" placeholder="Minimum Inventory" class="form-control mb-4 col-4"/></p>
-        <p><input type="text" path="maxInv" th:field="*{maxInv}" placeholder="Maximum Inventory" class="form-control mb-4 col-4"/></p>
+<p><input type="text" path="minInv" th:field="*{minInv}" placeholder="Minimum Inventory" class="form-control mb-4 col-4"/></p>
+<!--    <p th:if="${#fields.hasErrors('minInv')}" th:errors="*{minInv}">random error title test - min inventory</p>-->
+
+<p><input type="text" path="maxInv" th:field="*{maxInv}" placeholder="Maximum Invenvory" class="form-control mb-4 col-4"/></p>
+<!--        <p th:if="${#fields.hasErrors('inv')}" th:errors="*{isInventoryAboveRange()}">Maximum Inventory Error</p>-->
 
         <p><input type="text" th:field="*{companyName}" placeholder="Company Name" class="form-control mb-4 col-4"/></p>
 

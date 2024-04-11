@@ -1,10 +1,9 @@
 package com.example.demo.domain;
 
 import com.example.demo.validators.ValidDeletePart;
-import com.example.demo.validators.ValidMaxInv;
+import com.example.demo.validators.ValidInBetweenMinMax;
 
 import javax.persistence.*;
-import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import java.io.Serializable;
 import java.util.HashSet;
@@ -21,6 +20,7 @@ import java.util.Set;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="part_type",discriminatorType = DiscriminatorType.INTEGER)
 @Table(name="Parts")
+@ValidInBetweenMinMax()
 public abstract class Part implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -34,11 +34,14 @@ public abstract class Part implements Serializable {
     // Task G: adding min and max Inventory
     @Min(value = 0, message = "Minimum Inventory must be positive")
     int minInv;
-
-    //@Max(value = 100, message = "inventory must be less than 100")
-    //@ValidMaxInv()
     int maxInv;
-    boolean isInRange;
+
+//    I was testing the below 3 booleans to try to fix the errors Im getting. Disregard.
+//    ------------------ Disregard from here --------------------------
+//    boolean isInRange;
+//    boolean isAboveRange;
+//    boolean isBelowRange;
+//    ---------------------- To here -----------------------------------
 
     @ManyToMany
     @JoinTable(name="product_part", joinColumns = @JoinColumn(name="part_id"),
@@ -133,5 +136,9 @@ public abstract class Part implements Serializable {
         return (int) (id ^ (id >>> 32));
     }
 
-    public boolean isInventoryInRange() { return isInRange = (inv > minInv) && (inv < maxInv);}
+//   ---------------- Was Testing booleans. disregard from here -------------------
+//    public boolean isInventoryInRange() { return isInRange = (inv > minInv) && (inv < maxInv);}
+//    public boolean isInventoryAboveRange() { return isAboveRange = inv > maxInv; }
+//    public boolean isInventoryBelowRange() { return isBelowRange = inv < minInv; }
+// ------------------------------- To here ---------------------------------------------
 }
