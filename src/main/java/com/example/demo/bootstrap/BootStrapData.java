@@ -47,87 +47,87 @@ public class BootStrapData implements CommandLineRunner {
 // that way, you don't have to keep commenting and uncommenting this part out.
 
 // listing at least one item as an outsourced part
-//        OutsourcedPart turkeyBroadhead = new OutsourcedPart();
-//        turkeyBroadhead.setCompanyName("Sirius Archery");
-//        turkeyBroadhead.setName("turkey broadhead");
-//        turkeyBroadhead.setPrice(5.0);
-//        turkeyBroadhead.setInv(25);
-//        turkeyBroadhead.setMinInv(0);
-//        turkeyBroadhead.setMaxInv(100);
-//        turkeyBroadhead.setId(10001);
-//        outsourcedPartRepository.save(turkeyBroadhead);
+        OutsourcedPart turkeyBroadhead = new OutsourcedPart();
+        turkeyBroadhead.setCompanyName("Sirius Archery");
+        turkeyBroadhead.setName("turkey broadhead");
+        turkeyBroadhead.setPrice(5.0);
+        turkeyBroadhead.setInv(25);
+        turkeyBroadhead.setMinInv(0);
+        turkeyBroadhead.setMaxInv(100);
+        turkeyBroadhead.setId(10001);
+        outsourcedPartRepository.save(turkeyBroadhead);
+
+// printing out the items in the outsourced parts list
+
+        List<OutsourcedPart> outsourcedParts=(List<OutsourcedPart>) outsourcedPartRepository.findAll();
+        for(OutsourcedPart part:outsourcedParts){
+            System.out.println(part.getName()+" "+part.getCompanyName());
+        }
+// creating in house parts:
+        InhousePart hundredGFP = new InhousePart(); // 100 grain field point
+        hundredGFP.setName("100 grain field point");
+        hundredGFP.setPrice(2.25);
+        hundredGFP.setInv(10);
+        hundredGFP.setMinInv(0);
+        hundredGFP.setMaxInv(100);
+        hundredGFP.setId(1001);
+        inhousePartRepository.save(hundredGFP);
+
+        InhousePart twoFiftyGFP = new InhousePart(); // 250 grain field point
+        twoFiftyGFP.setName("250 grain field point");
+        twoFiftyGFP.setPrice(5.0);
+        twoFiftyGFP.setInv(15);
+        twoFiftyGFP.setMinInv(0);
+        twoFiftyGFP.setMaxInv(100);
+        twoFiftyGFP.setId(2501);
+        inhousePartRepository.save(twoFiftyGFP);
+
+        InhousePart hundredGBH = new InhousePart();
+        hundredGBH.setName("100 grain broadhead");
+        hundredGBH.setPrice(10.0);
+        hundredGBH.setInv(20);
+        hundredGBH.setMinInv(0);
+        hundredGBH.setMaxInv(100);
+        hundredGBH.setId(1002);
+        inhousePartRepository.save(hundredGBH);
+
+        InhousePart twoFiftyGBH = new InhousePart();
+        twoFiftyGBH.setName("250 grain broadhead");
+        twoFiftyGBH.setPrice(15.0);
+        twoFiftyGBH.setInv(23);
+        twoFiftyGBH.setMinInv(0);
+        twoFiftyGBH.setMaxInv(100);
+        twoFiftyGBH.setId(2502);
+        inhousePartRepository.save(twoFiftyGBH);
+
+        InhousePart standardFletchings = new InhousePart();
+        standardFletchings.setName("standard fletchings (pack of 3)");
+        standardFletchings.setPrice(2.5);
+        standardFletchings.setInv(30);
+        standardFletchings.setMinInv(0);
+        standardFletchings.setMaxInv(100);
+        standardFletchings.setId(1);
+        inhousePartRepository.save(standardFletchings);
+
+        InhousePart turkeyFletchings = new InhousePart();
+        turkeyFletchings.setName("turkey fletchings (pack of 3)");
+        turkeyFletchings.setPrice(3.0);
+        turkeyFletchings.setInv(25);
+        turkeyFletchings.setMinInv(0);
+        turkeyFletchings.setMaxInv(100);
+        turkeyFletchings.setId(2);
+        inhousePartRepository.save(turkeyFletchings);
 //
-//// printing out the items in the outsourced parts list
-//
-//        List<OutsourcedPart> outsourcedParts=(List<OutsourcedPart>) outsourcedPartRepository.findAll();
-//        for(OutsourcedPart part:outsourcedParts){
-//            System.out.println(part.getName()+" "+part.getCompanyName());
-//        }
-//// creating in house parts:
-//        InhousePart hundredGFP = new InhousePart(); // 100 grain field point
-//        hundredGFP.setName("100 grain field point");
-//        hundredGFP.setPrice(2.25);
-//        hundredGFP.setInv(10);
-//        hundredGFP.setMinInv(0);
-//        hundredGFP.setMaxInv(100);
-//        hundredGFP.setId(1001);
-//        inhousePartRepository.save(hundredGFP);
-//
-//        InhousePart twoFiftyGFP = new InhousePart(); // 250 grain field point
-//        twoFiftyGFP.setName("250 grain field point");
-//        twoFiftyGFP.setPrice(5.0);
-//        twoFiftyGFP.setInv(15);
-//        twoFiftyGFP.setMinInv(0);
-//        twoFiftyGFP.setMaxInv(100);
-//        twoFiftyGFP.setId(2501);
-//        inhousePartRepository.save(twoFiftyGFP);
-//
-//        InhousePart hundredGBH = new InhousePart();
-//        hundredGBH.setName("100 grain broadhead");
-//        hundredGBH.setPrice(10.0);
-//        hundredGBH.setInv(20);
-//        hundredGBH.setMinInv(0);
-//        hundredGBH.setMaxInv(100);
-//        hundredGBH.setId(1002);
-//        inhousePartRepository.save(hundredGBH);
-//
-//        InhousePart twoFiftyGBH = new InhousePart();
-//        twoFiftyGBH.setName("250 grain broadhead");
-//        twoFiftyGBH.setPrice(15.0);
-//        twoFiftyGBH.setInv(23);
-//        twoFiftyGBH.setMinInv(0);
-//        twoFiftyGBH.setMaxInv(100);
-//        twoFiftyGBH.setId(2502);
-//        inhousePartRepository.save(twoFiftyGBH);
-//
-//        InhousePart standardFletchings = new InhousePart();
-//        standardFletchings.setName("standard fletchings (pack of 3)");
-//        standardFletchings.setPrice(2.5);
-//        standardFletchings.setInv(30);
-//        standardFletchings.setMinInv(0);
-//        standardFletchings.setMaxInv(100);
-//        standardFletchings.setId(1);
-//        inhousePartRepository.save(standardFletchings);
-//
-//        InhousePart turkeyFletchings = new InhousePart();
-//        turkeyFletchings.setName("turkey fletchings (pack of 3)");
-//        turkeyFletchings.setPrice(3.0);
-//        turkeyFletchings.setInv(25);
-//        turkeyFletchings.setMinInv(0);
-//        turkeyFletchings.setMaxInv(100);
-//        turkeyFletchings.setId(2);
-//        inhousePartRepository.save(turkeyFletchings);
-////
-//        Product lightPracticeArrow= new Product("light practice arrow",45.0,5);
-//        Product heavyPracticeArrow= new Product("heavy practice arrow",50.0,5);
-//        Product lightHuntingArrow = new Product("light hunting arrow", 50.0, 5);
-//        Product heavyHuntingArrow = new Product("heavy hunting arrow", 55.0, 5);
-//        Product turkeyArrow = new Product("turkey arrow", 45.0, 5);
-//        productRepository.save(lightPracticeArrow);
-//        productRepository.save(heavyPracticeArrow);
-//        productRepository.save(lightHuntingArrow);
-//        productRepository.save(heavyHuntingArrow);
-//        productRepository.save(turkeyArrow);
+        Product lightPracticeArrow= new Product("light practice arrow",45.0,5);
+        Product heavyPracticeArrow= new Product("heavy practice arrow",50.0,5);
+        Product lightHuntingArrow = new Product("light hunting arrow", 50.0, 5);
+        Product heavyHuntingArrow = new Product("heavy hunting arrow", 55.0, 5);
+        Product turkeyArrow = new Product("turkey arrow", 45.0, 5);
+        productRepository.save(lightPracticeArrow);
+        productRepository.save(heavyPracticeArrow);
+        productRepository.save(lightHuntingArrow);
+        productRepository.save(heavyHuntingArrow);
+        productRepository.save(turkeyArrow);
 
         System.out.println("Started in Bootstrap");
         System.out.println("Number of Products"+productRepository.count());
