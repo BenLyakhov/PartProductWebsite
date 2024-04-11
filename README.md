@@ -73,6 +73,7 @@ Add validation for between or at the maximum and minimum fields. The validation 
 •  Display error messages for low inventory when adding and updating parts if the inventory is less than the minimum number of parts.
 •  Display error messages for low inventory when adding and updating products lowers the part inventory below the minimum.
 •  Display error messages when adding and updating parts if the inventory is greater than the maximum.
+1. testing gitHubRemote and GitLab remotes
 
 ### Task I - Add at least 2 unit tests for the max and min fields of the PartTest class in the test package
 
