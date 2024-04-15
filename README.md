@@ -77,6 +77,8 @@ Add validation for between or at the maximum and minimum fields. The validation 
 2. removed boolean statements from Inhousepartcontroller and outsourcedpartcontroller
 3. created ValidInBetweenMinMax and InBetweenMinMaxValidator, consolidating the separate min and max inventory validators
 4. in part.java, line 23, Input @ValidInBetweenMinMax as class level validator.
+5. OutsourcedPartForm.html, lines 31 to 33 and InhousePartForm.html, lines 30 - 32: added error message to display errors if inventory is below the minimum inventory or above maximum inventory
+6. In EnufPartsValidator.java, lines 37 and 38, added logic to check if adding more product lowers the part inventory below the minimum
 
 ### Task I - Add at least 2 unit tests for the max and min fields of the PartTest class in the test package
 

@@ -20,7 +20,7 @@ import java.util.Set;
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="part_type",discriminatorType = DiscriminatorType.INTEGER)
 @Table(name="Parts")
-@ValidInBetweenMinMax()
+@ValidInBetweenMinMax
 public abstract class Part implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -36,12 +36,6 @@ public abstract class Part implements Serializable {
     int minInv;
     int maxInv;
 
-//    I was testing the below 3 booleans to try to fix the errors Im getting. Disregard.
-//    ------------------ Disregard from here --------------------------
-//    boolean isInRange;
-//    boolean isAboveRange;
-//    boolean isBelowRange;
-//    ---------------------- To here -----------------------------------
 
     @ManyToMany
     @JoinTable(name="product_part", joinColumns = @JoinColumn(name="part_id"),
@@ -135,10 +129,4 @@ public abstract class Part implements Serializable {
     public int hashCode() {
         return (int) (id ^ (id >>> 32));
     }
-
-//   ---------------- Was Testing booleans. disregard from here -------------------
-//    public boolean isInventoryInRange() { return isInRange = (inv > minInv) && (inv < maxInv);}
-//    public boolean isInventoryAboveRange() { return isAboveRange = inv > maxInv; }
-//    public boolean isInventoryBelowRange() { return isBelowRange = inv < minInv; }
-// ------------------------------- To here ---------------------------------------------
 }

@@ -34,6 +34,8 @@ public class EnufPartsValidator implements ConstraintValidator<ValidEnufParts, P
             Product myProduct = repo.findById((int) product.getId());
             for (Part p : myProduct.getParts()) {
                 if (p.getInv()<(product.getInv()-myProduct.getInv()))return false;
+//  need logic that looks at part inventory and checks if adding this associated part decreases the inventory below the acceptable minimum inventory
+                if (p.getInv() - 1 <p.getMinInv()) return false; // not sure why -1 works, but the regular expression doesn't
             }
             return true;
         }
