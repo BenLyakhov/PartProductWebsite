@@ -81,6 +81,7 @@ Add validation for between or at the maximum and minimum fields. The validation 
 6. In EnufPartsValidator.java, lines 37 and 38, added logic to check if adding more product lowers the part inventory below the minimum
 
 ### Task I - Add at least 2 unit tests for the max and min fields of the PartTest class in the test package
+1. in PartTest.java, lines 159 - 176, added 2 tests: one for minInv and one for maxInv
 
 ### Task J - Remove the class files for any unused validaotors in order to clean up your code
 
