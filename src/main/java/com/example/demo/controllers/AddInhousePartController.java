@@ -42,8 +42,6 @@ public class AddInhousePartController{
         if(theBindingResult.hasErrors()){
             return "InhousePartForm";
         }
-//        else if (!part.isInventoryInRange()){ return "InhousePartForm"; }
-//        else if (part.isInventoryAboveRange() || part.isInventoryBelowRange()) { return "InhousePartForm"; }
         else{
         InhousePartService repo=context.getBean(InhousePartServiceImpl.class);
         InhousePart ip=repo.findById((int)part.getId());

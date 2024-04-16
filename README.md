@@ -84,6 +84,7 @@ Add validation for between or at the maximum and minimum fields. The validation 
 1. in PartTest.java, lines 159 - 176, added 2 tests: one for minInv and one for maxInv
 
 ### Task J - Remove the class files for any unused validaotors in order to clean up your code
+1. The only unused validator that I could find was the DeletePartValidator
 
 #### Other Notes:
 I was having a really hard time figuring out how to get the springboot app to start working again.

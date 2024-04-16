@@ -38,6 +38,5 @@ public class PurchaseProductController {
     } // end String purchaseproduct
 } // end PurchaseProductController
 
-// STUCK: the values don't decrement.
-// 3/29/24 8am: it works now. HUH?!?!?!?
+
 

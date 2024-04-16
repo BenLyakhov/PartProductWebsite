@@ -43,7 +43,7 @@ public class BootStrapData implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-//  --------------- TESTING CODE IN WEBSITE -----------------------------------------
+//  --------------- TESTING INVENTORY CODE IN WEBSITE -----------------------------------------
 
 //        if (outsourcedPartRepository.count() == 0) {
 //            OutsourcedPart outsourcedTest = new OutsourcedPart();
@@ -68,7 +68,7 @@ public class BootStrapData implements CommandLineRunner {
 //            inhousePartRepository.save(inHouseTest);
 //        }
 
-//  ------------ TESTING CODE IN WEBSITE -----------------------------------------
+//  ------------ TESTING INVENTORY  CODE IN WEBSITE -----------------------------------------
 
 
 // listing at least one item as an outsourced part
@@ -102,7 +102,7 @@ public class BootStrapData implements CommandLineRunner {
         hundredGFP.setMaxInv(100);
         hundredGFP.setId(12345); // wasn't showing up before. was it because it was binary???
         inhousePartRepository.save(hundredGFP);
-//            Light practice arrow doesn't show up. I don't know why.
+//            100 grain field point doesn't show up on the website. I don't know why.
 
         InhousePart twoFiftyGFP = new InhousePart(); // 250 grain field point
         twoFiftyGFP.setName("250 grain field point");
